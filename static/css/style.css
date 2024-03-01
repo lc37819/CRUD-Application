@@ -1,0 +1,48 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+h1 {
+    color: #333;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    font-size: 16px;
+}
+
+.btn-outline-secondary {
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #ff3860;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #fa2145;
+}
+
+.input-group {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
