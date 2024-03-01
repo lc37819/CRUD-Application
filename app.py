@@ -2,9 +2,9 @@ from flask import Flask, request, render_template, redirect, url_for, flash
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Needed for flashing messages
+app.secret_key = 'your_secret_key'
 
-DATABASE = 'tasks.db'  # Assuming you named your database 'tasks.db'
+DATABASE = 'tasks.db'
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
@@ -27,14 +27,10 @@ def tasks():
         name = request.form['name']
         points = request.form['points']
         
-        # Check if ID already exists
         existing_id = conn.execute('SELECT Id FROM tasks WHERE Id = ?', (id,)).fetchone()
         if existing_id:
-            # Close the connection before rendering
             conn.close()
-            # Flash a message to notify the user that the ID already exists
             flash('This ID already exists. Please use a different ID.', 'error')
-            # Redirect back to the tasks page to show the message
             return redirect(url_for('tasks'))
         
         conn.execute('INSERT INTO tasks (Id, Name, Points) VALUES (?, ?, ?)', (id, name, points))
